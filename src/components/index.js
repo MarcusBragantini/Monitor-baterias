@@ -24,13 +24,13 @@ const ListRecord = () => {
         <div className="row">
           <div className="col-lg-12">
             <div class="jumbotron">
-              <h1 class="display-2">Monitoramento de baterias</h1>
+              <h1 class="display-2">Monitor de baterias</h1>
             </div>
             <table className="table table-bordered table-striped">
               <thead className="thead-dark">
                 <tr>
                   <th scope="col">No.</th>
-                  <th scope="col">Baterias</th>
+                  <th scope="col">Bateria</th>
                 </tr>
               </thead>
               <tbody>
