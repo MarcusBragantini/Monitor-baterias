@@ -30,7 +30,7 @@ const ListRecord = () => {
               <thead className="thead-dark">
                 <tr>
                   <th scope="col">No.</th>
-                  <th scope="col">Bateria</th>
+                  <th scope="col">Tensão</th>
                 </tr>
               </thead>
               <tbody>
@@ -38,7 +38,7 @@ const ListRecord = () => {
                   return (
                     <tr key={id}>
                       <th scope="row">{index + 1}</th>
-                      <td>{data.bat01}</td>
+                      <td>{data.bat01} Vdc</td>
                     </tr>
                   );
                 })}
