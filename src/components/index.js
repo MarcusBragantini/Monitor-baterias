@@ -39,7 +39,7 @@ const ListRecord = () => {
                     <tr key={id}>
                       <th scope="row">{index + 1}</th>
                       <td>{data.bat01} Vdc</td>
-                    </tr>
+                    </tr>                    
                   );
                 })}
               </tbody>

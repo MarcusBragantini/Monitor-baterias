@@ -9,7 +9,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={ListRecord} />
         </Switch>
-        <About />
     </div>
   );
 }
