@@ -35,11 +35,11 @@ const ListRecord = () => {
                 </tr>
               </thead>
               <tbody>
-                {sensores.map((sensor) => {
+                {sensores.map((bateria) => {
                   return (
-                      <tr key={sensor.id}>
-                        <th scope="row">{sensor.id}</th>
-                        <td>{sensor.tensao} V</td>
+                      <tr key={bateria.id}>
+                        <th scope="row">{bateria.id}</th>
+                        <td>{bateria.tensao} V</td>
                       </tr>
                   );
                 })}
