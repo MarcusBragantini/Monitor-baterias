@@ -6,7 +6,7 @@ const ListRecord = () => {
   const [sensores, setSensores] = useState([]);
 
   useEffect(() => {
-    const sensoresRef = firebaseDb.child('/').on('value', (snapshot) => {
+     firebaseDb.child('/').on('value', (snapshot) => {
       const data = snapshot.val();
       const novoArraySensores = Object.keys(data).map((key) => {
         return {
