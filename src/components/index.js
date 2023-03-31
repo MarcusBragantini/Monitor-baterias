@@ -1,23 +1,24 @@
+/* eslint-disable no-undef */
 import React, { useEffect, useState } from "react";
 import firebaseDb from "../firebase";
 
 const ListRecord = () => {
-  const [data, setData] = useState({});
-
-  console.log("data", data);
+  const [sensores, setSensores] = useState([]);
 
   useEffect(() => {
-    firebaseDb.child("bateria").on("value", (snapshot) => {
-      if (snapshot.val() !== null) {
-        setData({
-          ...snapshot.val(),
-        });
-      } else {
-        setData({});
-      }
+    const sensoresRef = firebaseDb.child('/').on('value', (snapshot) => {
+      const data = snapshot.val();
+      const novoArraySensores = Object.keys(data).map((key) => {
+        return {
+          id: key,
+          nome: data[key].nome,
+          localizacao: data[key].localizacao,
+          tensao: data[key].bat,
+        };
+      });
+      setSensores(novoArraySensores);
     });
   }, []);
-
   return (
     <>
       <div className="container-fluid mt-5">
@@ -34,12 +35,12 @@ const ListRecord = () => {
                 </tr>
               </thead>
               <tbody>
-                {Object.keys(data).map((id, index) => {
+                {sensores.map((sensor) => {
                   return (
-                    <tr key={id}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{data.bat01} Vdc</td>
-                    </tr>                    
+                      <tr key={sensor.id}>
+                        <th scope="row">{sensor.id}</th>
+                        <td>{sensor.tensao} V</td>
+                      </tr>
                   );
                 })}
               </tbody>
